@@ -1,4 +1,4 @@
-from unittest import signals
+
 
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
@@ -16,8 +16,6 @@ from newsapi import NewsApiClient
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from dotenv import load_dotenv
 import os
-
-from preprocess import X_test
 
 # =========================
 # ENVIRONMENT VARIABLES
@@ -83,28 +81,55 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+@app.get("/health")
+def health():
+    return {
+        "model_loaded": model is not None,
+        "scaler_loaded": scaler is not None,
+        "intraday_model_loaded": intraday_model is not None,
+        "catboost_model_loaded": catboost_model is not None,
+        "intraday_scaler_loaded": intraday_scaler is not None
+    }
+
 # =====================================
-# LOAD AI MODEL
+# LOAD AI MODELS (optional — handle missing files)
 # =====================================
-model = load_model("stock_lstm_model.h5")
+model = None
+scaler = None
+intraday_model = None
+catboost_model = None
+intraday_scaler = None
 
-scaler = joblib.load("scaler.save")
+def try_load_model():
+    global model, scaler, intraday_model, catboost_model, intraday_scaler
+    try:
+        model = load_model("stock_lstm_model.h5")
+    except Exception:
+        model = None
 
-# =====================================
-# LOAD INTRADAY MODEL
-# =====================================
+    try:
+        scaler = joblib.load("scaler.save")
+    except Exception:
+        scaler = None
 
-intraday_model = joblib.load(
-    "xgboost_intraday_model.pkl"
-)
+    try:
+        intraday_model = joblib.load("xgboost_intraday_model.pkl")
+    except Exception:
+        intraday_model = None
 
-catboost_model = joblib.load(
-    "catboost_intraday_model.pkl"
-)
+    try:
+        catboost_model = joblib.load("catboost_intraday_model.pkl")
+    except Exception:
+        catboost_model = None
 
-intraday_scaler = joblib.load(
-    "intraday_scaler.save"
-)
+    try:
+        intraday_scaler = joblib.load("intraday_scaler.save")
+    except Exception:
+        intraday_scaler = None
+
+# attempt to load at startup (non-fatal)
+try_load_model()
 
 # =========================================================
 # BASIC STOCK DATA
@@ -583,7 +608,7 @@ def sentiment(symbol: str):
 
         overall_score = 0
 
-        for article in articles["articles"]:
+        for article in articles.get("articles", []) if isinstance(articles, dict) else []:
 
             title = article["title"]
 
@@ -633,24 +658,15 @@ def sentiment(symbol: str):
         }
 
     except Exception as e:
-
         return {
-
             "overall_sentiment": "NEUTRAL ",
-
             "news": [
-
                 {
-                    "title":
-                    "Unable to fetch news currently",
-
-                    "sentiment":
-                    "NEUTRAL ",
-
+                    "title": "Unable to fetch news currently",
+                    "sentiment": "NEUTRAL ",
                     "score": 0
                 }
             ],
-
             "error": str(e)
         }
 @app.get("/recommendation/{symbol}")
@@ -702,28 +718,25 @@ def recommendation(symbol: str):
     # =========================
     # SENTIMENT
     # =========================
-    company = company_map.get(
-        symbol.upper(),
-        symbol
-    )
 
-    articles = newsapi.get_everything(
-        q=company,
-        language="en",
-        sort_by="publishedAt",
-        domains="economictimes.indiatimes.com,moneycontrol.com,business-standard.com",
-        page_size=5
-    )
-
-    overall_score = 0
-
-    for article in articles["articles"]:
-
-        title = article["title"]
-
-        score = analyzer.polarity_scores(title)
-
-        overall_score += score["compound"]
+    # safe news fetch
+    try:
+        company = company_map.get(symbol.upper(), symbol)
+        articles = newsapi.get_everything(
+            q=company,
+            language="en",
+            sort_by="publishedAt",
+            domains="economictimes.indiatimes.com,moneycontrol.com,business-standard.com",
+            page_size=5
+        )
+        overall_score = 0
+        for article in articles.get("articles", []) if isinstance(articles, dict) else []:
+            title = article.get("title", "")
+            score = analyzer.polarity_scores(title)
+            overall_score += score.get("compound", 0)
+    except Exception:
+        overall_score = 0
+        articles = {"articles": []}
 
     avg_score = overall_score / max(
         len(articles["articles"]),
@@ -974,6 +987,9 @@ def predict_price(symbol: str):
     # =====================================
     # SCALE DATA
     # =====================================
+    if scaler is None or model is None:
+        return {"error": "Model or scaler not available. Run preprocessing and training first."}
+
     scaled_data = scaler.transform(data)
 
     # =====================================
@@ -1235,6 +1251,9 @@ def intraday_predict(
     # SCALE
     # =================================
     data = df[features]
+
+    if intraday_scaler is None:
+        return {"error": "Intraday scaler not available. Run intraday preprocessing first."}
 
     scaled_data = intraday_scaler.transform(
         data

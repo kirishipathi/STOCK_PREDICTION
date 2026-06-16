@@ -9,11 +9,12 @@ import joblib
 # =====================================
 # LOAD DATASET
 # =====================================
-print("Loading dataset...")
+def main():
+    print("Loading dataset...")
 
-df = pd.read_csv("training_data.csv")
+    df = pd.read_csv("training_data.csv")
 
-print(df.head())
+    print(df.head())
 
 # =====================================
 # FEATURES FOR ML
@@ -129,6 +130,10 @@ print(f"\nX_train shape: {X_train.shape}")
 
 print(f"y_train shape: {y_train.shape}")
 
-print(f"\nX_test shape: {X_test.shape}")
+    print(f"\nX_test shape: {X_test.shape}")
+
+
+if __name__ == "__main__":
+    main()
 
 print(f"y_test shape: {y_test.shape}")

@@ -6,29 +6,22 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "apexcharts": "^5.12.0",
-    "axios": "^1.16.0",
-    "chart.js": "^4.5.1",
+    "axios": "^1.6.0",
+    "chart.js": "^4.4.0",
     "chartjs-adapter-date-fns": "^3.0.0",
     "chartjs-chart-financial": "^0.2.1",
-    "react": "^19.2.5",
-    "react-apexcharts": "^2.1.0",
-    "react-chartjs-2": "^5.3.1",
-    "react-dom": "^19.2.5"
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "apexcharts": "^3.44.0",
+    "react-apexcharts": "^1.4.0",
+    "date-fns": "^2.30.0"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^10.2.1",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.5.0",
-    "vite": "^8.0.10"
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^5.0.0"
   }
 }
