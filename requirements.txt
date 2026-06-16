@@ -6,7 +6,6 @@ numpy
 scikit-learn
 xgboost
 catboost
-tensorflow
 joblib
 newsapi-python
 vaderSentiment

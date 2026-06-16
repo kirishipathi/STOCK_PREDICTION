@@ -2,7 +2,11 @@
 
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
-from tensorflow.keras.models import load_model
+try:
+    from tensorflow.keras.models import load_model
+except Exception:
+    # tensorflow not installed — load_model will fail later if used
+    load_model = None
 import sqlite3
 import pandas as pd
 
