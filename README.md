@@ -279,8 +279,8 @@ The system demonstrates the integration of Financial Analytics, Machine Learning
 
 ## Author
 
-Jeevanantham C
+KIRISHIPATHI
 
-B.Tech Artificial Intelligence and Machine Learning
+B.E COMPUTER SCIENCE AND ENGINEERING
 
 Project: AI-Powered Real-Time Stock Market Prediction and Analysis System# NSE-STOCK-PREDICTION
