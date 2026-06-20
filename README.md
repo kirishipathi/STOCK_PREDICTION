@@ -1,286 +1,342 @@
-# AI-Powered Real-Time Stock Market Prediction and Analysis System
+<div align="center">
 
-## Overview
+# 📈 NSE Stock Prediction AI
 
-An end-to-end AI-powered stock market analytics platform that combines real-time market monitoring, technical analysis, machine learning forecasting, and interactive financial visualization.
+### 🤖 AI-Powered Real-Time Stock Market Prediction and Analysis System
+
+**An end-to-end financial analytics platform combining real-time market monitoring, technical analysis, machine learning forecasting, and interactive visualization.**
+
+![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-ML_Model-EB5E28?style=for-the-badge&logo=xgboost&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
+
+</div>
+
+<br>
+
+## 📌 Overview
+
+**NSE Stock Prediction AI** is an end-to-end AI-powered stock market analytics platform that combines **real-time market monitoring**, **technical analysis**, **machine learning forecasting**, and **interactive financial visualization**.
 
 The system provides:
 
-- Real-time stock tracking
-- NIFTY 50 live market monitoring
-- Technical indicator analysis
-- AI-based tomorrow price prediction
-- Intraday forecasting engine
-- Buy / Sell / Hold recommendations
-- Interactive financial dashboards
+- 📡 Real-time stock tracking
+- 📊 NIFTY 50 live market monitoring
+- 📐 Technical indicator analysis
+- 🔮 AI-based tomorrow price prediction
+- ⏱️ Intraday forecasting engine
+- 🟢🔴 Buy / Sell / Hold recommendations
+- 🖥️ Interactive financial dashboards
+
+<br>
 
 ---
 
-## Key Features
+## ✨ Key Features
 
-### Real-Time Market Analytics
-- Live stock price monitoring
-- NIFTY 50 live chart visualization
-- Market overview dashboard
-- Auto-refreshing market data
+### 1️⃣ 📡 Real-Time Market Analytics
 
-### Technical Analysis
-- RSI (Relative Strength Index)
-- MACD
-- SMA (Simple Moving Average)
-- EMA 20
-- EMA 50
-- VWAP
-- Momentum
-- Volatility
+- 💹 Live stock price monitoring
+- 📈 NIFTY 50 live chart visualization
+- 🗂️ Market overview dashboard
+- 🔄 Auto-refreshing market data
 
-### AI Prediction Engine
-- Tomorrow price forecasting
-- Intraday multi-step forecasting
-- Trend analysis
-- Confidence estimation
-- Recommendation generation
+<br>
 
-### Interactive Dashboard
-- React-based frontend
-- Dynamic charts and visualizations
-- Responsive design
-- Real-time API integration
+### 2️⃣ 📐 Technical Analysis
 
----
+| | | |
+|---|---|---|
+| **RSI** | **MACD** | **SMA** |
+| **EMA 20** | **EMA 50** | **VWAP** |
+| **Momentum** | **Volatility** | |
 
-## System Architecture
+<br>
 
-```
-User
- │
- ▼
-React Frontend
- │
- ▼
-FastAPI Backend
- │
- ├──────── Yahoo Finance API
- │
- ├──────── Technical Indicator Engine
- │
- ├──────── Tomorrow Prediction Model
- │
- └──────── XGBoost Intraday Forecast Model
-          │
-          ▼
-     Prediction Results
-          │
-          ▼
-     Dashboard Visualization
-```
+### 3️⃣ 🔮 AI Prediction Engine
+
+- 🌅 Tomorrow price forecasting
+- ⏱️ Intraday multi-step forecasting
+- 📊 Trend analysis
+- 🎯 Confidence estimation
+- 🟢🔴 Recommendation generation
+
+<br>
+
+### 4️⃣ 🖥️ Interactive Dashboard
+
+- ⚛️ React-based frontend
+- 📊 Dynamic charts and visualizations
+- 📱 Responsive design
+- 🔌 Real-time API integration
+
+<br>
 
 ---
 
-## Technology Stack
+## 🏗️ System Architecture
+            ┌──────────────────────────┐
+            │        🧍 User            │
+            └─────────────┬────────────┘
+                          │
+                          ▼
+            ┌──────────────────────────┐
+            │     ⚛️ React Frontend      │
+            └─────────────┬────────────┘
+                          │
+                          ▼
+            ┌──────────────────────────┐
+            │    🐍 FastAPI Backend     │
+            └─────────────┬────────────┘
+                          │
+    ┌─────────────────────┼─────────────────────┐
+    │                     │                      │
+    ▼                     ▼                      ▼
+┌───────────────┐   ┌──────────────────┐   ┌─────────────────────┐
 
-### Frontend
-- ReactJS
-- Chart.js
-- Axios
-- CSS
+│ 📡 Yahoo       │   │ 📐 Technical      │   │ 🔮 Tomorrow          │
 
-### Backend
-- FastAPI
-- Python
+│ Finance API    │   │ Indicator Engine │   │ Prediction Model     │
 
-### Machine Learning
-- XGBoost
-- Scikit-Learn
-- NumPy
-- Pandas
+└───────────────┘   └──────────────────┘   └─────────────────────┘
 
-### Data Source
-- Yahoo Finance API
+│
+
+▼
+
+┌─────────────────────────┐
+
+│ ⚡ XGBoost Intraday       │
+
+│ Forecast Model            │
+
+└─────────────┬───────────┘
+
+│
+
+▼
+
+┌─────────────────────────┐
+
+│   📊 Prediction Results  │
+
+└─────────────┬───────────┘
+
+│
+
+▼
+
+┌─────────────────────────┐
+
+│ 🖥️ Dashboard Visualization│
+
+└─────────────────────────┘
+
+<br>
 
 ---
 
-## Dataset Information
+## 🧰 Tech Stack
+
+<div align="center">
+
+| Layer | Technology |
+|:---:|:---:|
+| 🎨 **Frontend** | ReactJS, Chart.js, Axios, CSS |
+| 🐍 **Backend** | FastAPI, Python |
+| 🤖 **Machine Learning** | XGBoost, Scikit-Learn, NumPy, Pandas |
+| 📡 **Data Source** | Yahoo Finance API |
+
+</div>
+
+<br>
+
+---
+
+## 📊 Dataset Information
+
+<div align="center">
 
 | Metric | Value |
-|----------|----------|
-| Training Samples | 193,384 |
-| Features | 14 |
-| Input Sequence | 60 Candles |
-| Forecast Horizon | 72 Candles |
-| Stocks Covered | 50 NSE Stocks |
-| Interval | 5 Minutes |
+|:---:|:---:|
+| **Training Samples** | 193,384 |
+| **Features** | 14 |
+| **Input Sequence** | 60 Candles |
+| **Forecast Horizon** | 72 Candles |
+| **Stocks Covered** | 50 NSE Stocks |
+| **Interval** | 5 Minutes |
+
+</div>
+
+<br>
+
+### 🧬 Engineered Features
+
+The model uses **14 engineered market features**:
+
+| | | |
+|---|---|---|
+| Open | High | Low |
+| Close | Volume | SMA 5 |
+| EMA 20 | EMA 50 | RSI |
+| MACD | Signal Line | Volatility |
+| Momentum | VWAP | |
+
+<br>
 
 ---
 
-## Engineered Features
+## 🤖 Machine Learning Model
 
-The model uses 14 engineered market features:
-
-- Open
-- High
-- Low
-- Close
-- Volume
-- SMA 5
-- EMA 20
-- EMA 50
-- RSI
-- MACD
-- Signal Line
-- Volatility
-- Momentum
-- VWAP
-
----
-
-## Machine Learning Model
+<div align="center">
 
 ### Intraday Forecast Model
 
-Model:
-- XGBoost MultiOutput Regressor
+**Model:** XGBoost MultiOutput Regressor
+**Objective:** Predict future market movement for the remaining trading session
 
-Objective:
-- Predict future market movement for the remaining trading session
+</div>
 
-Performance:
+<br>
+
+<div align="center">
 
 | Metric | Value |
-|----------|----------|
-| MAE | 0.00132 |
-| Training Time | 47.99 Minutes |
-| Forecast Horizon | 72 Future Candles |
+|:---:|:---:|
+| **MAE** | 0.00132 |
+| **Training Time** | 47.99 Minutes |
+| **Forecast Horizon** | 72 Future Candles |
+
+</div>
+
+<br>
 
 ---
 
-## Project Workflow
+## 🔄 Project Workflow
 
-### Data Collection
+**1️⃣ Data Collection**
+- 📥 Download NSE stock data
+- ⏱️ Collect 5-minute interval market candles
+- 🗄️ Store historical market data
 
-- Download NSE stock data
-- Collect 5-minute interval market candles
-- Store historical market data
+**2️⃣ Feature Engineering**
+- 📐 Calculate technical indicators
+- 📊 Generate momentum and volatility features
+- ⚖️ Normalize feature space
 
-### Feature Engineering
+**3️⃣ Model Training**
+- 🤖 Train XGBoost MultiOutput Regressor
+- ✅ Evaluate model performance
+- 💾 Save trained model
 
-- Calculate technical indicators
-- Generate momentum and volatility features
-- Normalize feature space
+**4️⃣ Prediction**
+- 🌅 Generate tomorrow forecast
+- ⏱️ Generate intraday forecast
+- 🟢🔴 Produce Buy / Sell / Hold recommendation
 
-### Model Training
+**5️⃣ Visualization**
+- 📈 Display live charts
+- 🔮 Display AI predictions
+- 📊 Display market analytics
 
-- Train XGBoost MultiOutput Regressor
-- Evaluate model performance
-- Save trained model
-
-### Prediction
-
-- Generate tomorrow forecast
-- Generate intraday forecast
-- Produce Buy / Sell / Hold recommendation
-
-### Visualization
-
-- Display live charts
-- Display AI predictions
-- Display market analytics
+<br>
 
 ---
 
-## API Endpoints
+## 📡 API Endpoints
 
-### Live Stock Data
+| Endpoint | Description |
+|---|---|
+| `GET /stock/{symbol}` | 💹 Live Stock Data |
+| `GET /predict/{symbol}` | 🌅 Tomorrow Prediction |
+| `GET /intraday_predict/{symbol}` | ⏱️ Intraday Prediction |
+| `GET /market_overview` | 🗂️ Market Overview |
+| `GET /nifty_live` | 📈 NIFTY 50 Live Data |
 
-```
-GET /stock/{symbol}
-```
-
-### Tomorrow Prediction
-
-```
-GET /predict/{symbol}
-```
-
-### Intraday Prediction
-
-```
-GET /intraday_predict/{symbol}
-```
-
-### Market Overview
-
-```
-GET /market_overview
-```
-
-### NIFTY 50 Live Data
-
-```
-GET /nifty_live
-```
+<br>
 
 ---
 
-## Dashboard Modules
+## 🖥️ Dashboard Modules
 
-### NIFTY 50 Live Market
-- Live index tracking
-- Interactive line chart
-- High / Low / Current values
+| | Module | Highlights |
+|---|---|---|
+| 📊 | **NIFTY 50 Live Market** | Live index tracking, interactive line chart, High / Low / Current values |
+| 🗂️ | **Market Overview** | Top Gainers, Top Losers, Market Sentiment |
+| 🌅 | **Tomorrow Prediction** | Predicted closing price, expected trend, confidence estimation |
+| ⏱️ | **Intraday Forecast** | Multi-step forecasting, forecast path visualization |
+| 🟢🔴 | **Recommendation Engine** | BUY · SELL · HOLD |
 
-### Market Overview
-- Top Gainers
-- Top Losers
-- Market Sentiment
-
-### Tomorrow Prediction
-- Predicted closing price
-- Expected trend
-- Confidence estimation
-
-### Intraday Forecast
-- Multi-step forecasting
-- Forecast path visualization
-
-### Recommendation Engine
-- BUY
-- SELL
-- HOLD
+<br>
 
 ---
 
-## Future Enhancements
+## 🔮 Future Enhancements
 
-- Transformer-based forecasting models
-- Reinforcement learning strategies
-- Portfolio optimization
-- Risk management engine
-- Real-time WebSocket streaming
-- Cloud deployment
-- Mobile application support
+- 🧠 Transformer-based forecasting models
+- 🎮 Reinforcement learning strategies
+- 📊 Portfolio optimization
+- ⚠️ Risk management engine
+- 🔌 Real-time WebSocket streaming
+- ☁️ Cloud deployment
+- 📱 Mobile application support
+
+<br>
 
 ---
 
-## Project Outcome
+<div align="center">
+
+## 🎯 Project Outcome
+
+</div>
 
 Successfully developed an AI-powered financial analytics platform capable of:
 
-- Real-time stock monitoring
-- Technical market analysis
-- Intraday forecasting
-- Tomorrow price prediction
-- Decision support recommendations
-- Interactive dashboard visualization
+<div align="center">
 
-The system demonstrates the integration of Financial Analytics, Machine Learning, Data Engineering, and Full Stack Development into a unified stock market intelligence platform.
+| 📡 | 📐 | ⏱️ | 🌅 | 🟢🔴 | 🖥️ |
+|---|---|---|---|---|---|
+| **Real-Time Monitoring** | **Technical Analysis** | **Intraday Forecasting** | **Tomorrow Prediction** | **Decision Support** | **Interactive Dashboard** |
+
+</div>
+
+<div align="center">
+
+*The system demonstrates the integration of **Financial Analytics**, **Machine Learning**, **Data Engineering**, and **Full Stack Development** into a unified stock market intelligence platform.*
+
+</div>
+
+<br>
 
 ---
 
-## Author
+<div align="center">
 
-Jeevanantham C
+## 👤 Author
 
-B.Tech Artificial Intelligence and Machine Learning
+### **KIRISHIPATHI**
+**B.E. Computer Science and Engineering**
 
-Project: AI-Powered Real-Time Stock Market Prediction and Analysis System# NSE-STOCK-PREDICTION
+📌 *Project: AI-Powered Real-Time Stock Market Prediction and Analysis System*
+
+</div>
+
+<br>
+
+---
+
+<div align="center">
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+<br>
+
+# ⭐ Star this repository if you found it useful!
+
+</div>
