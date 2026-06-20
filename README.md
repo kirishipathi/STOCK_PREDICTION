@@ -296,47 +296,21 @@ The model uses **14 engineered market features**:
 
 Successfully developed an AI-powered financial analytics platform capable of:
 
-<div align="center">
+- Real-time stock monitoring
+- Technical market analysis
+- Intraday forecasting
+- Tomorrow price prediction
+- Decision support recommendations
+- Interactive dashboard visualization
 
-| 📡 | 📐 | ⏱️ | 🌅 | 🟢🔴 | 🖥️ |
-|---|---|---|---|---|---|
-| **Real-Time Monitoring** | **Technical Analysis** | **Intraday Forecasting** | **Tomorrow Prediction** | **Decision Support** | **Interactive Dashboard** |
-
-</div>
-
-<div align="center">
-
-*The system demonstrates the integration of **Financial Analytics**, **Machine Learning**, **Data Engineering**, and **Full Stack Development** into a unified stock market intelligence platform.*
-
-</div>
-
-<br>
+The system demonstrates the integration of Financial Analytics, Machine Learning, Data Engineering, and Full Stack Development into a unified stock market intelligence platform.
 
 ---
 
-<div align="center">
+## Author
 
-## 👤 Author
+Jeevanantham C
 
-### **KIRISHIPATHI**
-**B.E. Computer Science and Engineering**
+B.Tech Artificial Intelligence and Machine Learning
 
-📌 *Project: AI-Powered Real-Time Stock Market Prediction and Analysis System*
-
-</div>
-
-<br>
-
----
-
-<div align="center">
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
-<br>
-
-# ⭐ Star this repository if you found it useful!
-
-</div>
+Project: AI-Powered Real-Time Stock Market Prediction and Analysis System# NSE-STOCK-PREDICTION
