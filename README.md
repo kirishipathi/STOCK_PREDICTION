@@ -306,11 +306,3 @@ Successfully developed an AI-powered financial analytics platform capable of:
 The system demonstrates the integration of Financial Analytics, Machine Learning, Data Engineering, and Full Stack Development into a unified stock market intelligence platform.
 
 ---
-
-## Author
-
-Jeevanantham C
-
-B.Tech Artificial Intelligence and Machine Learning
-
-Project: AI-Powered Real-Time Stock Market Prediction and Analysis System# NSE-STOCK-PREDICTION
